@@ -15,6 +15,630 @@
     Регистрация пройдена, в правом верхнем углу отображены данные (аватар, Nickname) указанного пользователя.
 
 - summary: |
+    Успешный вход с помощью других сервисов
+  requirement: |
+    Пользователь может войти в систему, используя учетную запись GitHub.
+  prerequisites: |
+    Используется существующий аккаунт пользователя портала GitHub
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Sign In
+    - Нажать кнопку Sign in with GitHub
+    - Ввести логин или email
+    - Нажать sign in
+  expected-result: |
+    Пользователь авторизован, в правом верхнем углу отображены данные (аватар, Nickname) указанного пользователя
+
+- summary: |
+    Успешный вход с помощью других сервисов
+  requirement: |
+    Пользователь может войти в систему, используя учетную запись Discord
+  prerequisites: |
+    Используется существующий аккаунт пользователя портала Discord.com
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Sign In
+    - Нажать кнопку Sign in with Discord
+    - Нажать авторизация
+  expected-result: |
+    Пользователь авторизован, в правом верхнем углу отображены данные (аватар, Nickname) указанного пользователя
+
+- summary: |
+    Успешный вход с помощью других сервисов
+  requirement: |
+    Пользователь может войти в систему, используя учетную запись Discord используя QR-код
+  prerequisites: |
+    Необходимо быть зарегистрированным на портале Discord.com
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Sign In
+    - Нажать кнопку Sign in with Discord
+    - Сканировать QR-код через мобильное приложение Discord на телефоне
+    - Пройти капчу
+  expected-result: |
+    Пользователь авторизован, в правом верхнем углу отображены данные (аватар, Nickname) указанного пользователя
+
+- summary: |
+    Успешная авторизация на сайте
+  requirement: |
+    Пользователь может войти в систему используя логин и пароль
+  prerequisites: |
+    no data
+  test-data: |
+    Email = danism76@gmail.com
+    Password = Avangard13
+  steps:
+    - Нажать кнопку Sign In
+    - Ввести Email
+    - Ввести Password
+    - Нажать кнопку Submit
+  expected-result: |
+    Пользователь авторизован, в правом верхнем углу отображены данные (аватар, Nickname) указанного пользователя
+
+- summary: |
+    Успешное восстановление пароля
+  requirement: |
+    Пользователь может восстановить пароль
+  prerequisites: |
+    Пользователь забыл пароль
+  test-data: |
+    Email = danism76@gmail.com
+    New password = 12345678
+  steps:
+    - Нажать кнопку Sign In
+    - Нажать Forgot your password?
+    - Ввести Email
+    - Перейти по ссылке отправленной на указанный адрес
+    - Ввести в поле New password новый пароль
+    - Нажать Save
+    - На главной странице нажать кнопку Sign In
+    - Ввести Email
+    - Ввести новый Password
+    - Нажать Submit
+  expected-result: |
+    Пароль успешно изменён
+
+- summary: |
+    Запуск игры незарегистрированным пользователем 
+  requirement: |
+    Пользователь может запустить игру без входа в систему
+  prerequisites: |
+    no data
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Try simple battle
+  expected-result: |
+    Открылось игровое поле для игры с ботом
+
+- summary: |
+    Редактирование профиля пользователя
+  requirement: |
+    Пользователь может изменить имя, пароль, аватар, email в настройках профиля
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать на навигационное меню
+    - Нажать Settings
+    - Изменить Email с danism76@gmail.com на dan_m86@list.ru
+    - Изменить Password с Avangard13 на 123456
+    - Изменить аватар
+    - Нажать Save
+  expected-result: |
+    Изменились имя, email, password, аватар
+
+- summary: |
+    Изменение настроек профиля
+  requirement: |
+    Пользователь может менять язык программирования в настройках профиля 
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать на навигационное меню
+    - Нажать Settings
+    - Выбрать язык программирования в окне Your weapon
+    - Нажать Save
+  expected-result: |
+    Изменился язык программирования, появилось сообщение Your settings has been changed
+
+- summary: |
+    Изменение настроек профиля
+  requirement: |
+    Пользователь может изменить звуки сайта на dendy/cs/standart/silent в настройках профиля
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать на навигационное меню
+    - Нажать Settings
+    - Изменить звук сайта во вкладке Select sound type
+    - Нажать Save
+  expected-result: |
+    Звуки сайта изменились согласно выбранных, появилось сообщение Your settings has been changed
+
+- summary: |
+    Изменение настроек профиля
+  requirement: |
+    Пользователь может изменить громкость звуков сайта в настройках профиля
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать на навигационное меню
+    - Нажать Settings
+    - Изменить громкость сайта путем передвигания бегунка 
+    - Нажать Save
+  expected-result: |
+    Изменилась громкость сайта согласно установке бегунка, появилось сообщение Your settings has been changed
+
+- summary: |
+    Просмотр статистики своего профиля
+  requirement: |
+    Пользователь может просматривать статистику своего профиля
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать на навигационное меню
+    - Нажать My profile
+  expected-result: |
+    Открылась страница со статистикой данного пользователя
+    
+- summary: |
+    Выход из профиля
+  requirement: |
+    Пользователь может выйти из профиля
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать на навигационное меню
+    - Нажать Sign Out
+  expected-result: |
+    Выход пользователя из приложения выполнен успешно
+
+- summary: |
+    Открытие созданного турнира
+  requirement: |
+    Пользователь может просматривать информацию о созданном им турнире
+  prerequisites: |
+    Пользователь авторизован на сайте
+    Пользователем был создан турнир
+  test-data: |
+    Имя турнира = Unreal_Tournament
+    Email = danism76@gmail.com
+    Password = Avangard13
+  steps:
+    - Нажать на навигационное меню
+    - Нажать Tournaments
+    - Кликнуть Show на созданный пользователем турнир
+  expected-result: |
+    Открыта страница с турниром и видна вся информация о нем
+
+- summary: |
+    Сортировка пользователей по рейтингу
+  requirement: |
+    Пользователь может сортировать рейтинг пользователей по недельному, месячному и общему рейтингу
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать Top list в таблице Leader boards
+    - Нажать Weekly
+    - Нажать на сортировку рейтинга в порядке убывания/возрастания
+    - Нажать Monthly
+    - Нажать на сортировку рейтинга в порядке убывания/возрастания
+    - Нажать Total
+    - Нажать на сортировку рейтинга в порядке убывания/возрастания
+  expected-result: |
+    Рейтинги отображаются и сортируются 
+
+- summary: |
+    Создание игры
+  requirement: |
+    Пользователь может создать игру с другим пользователем или ботом
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Create a game
+    - Выбрать уровень (level)
+    - Выбрать тип игры (type of game)
+    - Выбрать время игры (time control)
+    - Выбрать задание (Choose task by name or tags)
+    - Нажать Create battle
+  expected-result: |
+    Открыта страница с игрой 
+
+- summary: |
+    История игры
+  requirement: |
+    Незарегистрированный пользователь может просматривать историю своей игры с ботом
+  prerequisites:
+    no data
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Try simple battle
+    - Нажать Open history
+    - Нажать Play
+  expected-result: |
+    Отображена история игры с ботом.
+
+- summary: |
+    Просмотр Guide в игре
+  requirement: |
+   Незарегистрированный пользователь может просматривать Guide в игре с ботом
+  prerequisites:
+    no data
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Try simple battle
+    - Нажать Show guide
+    - Нажать Next
+    - Нажать Back
+    - Нажать Skip guide
+  expected-result: |
+    Guide работает у незарегистрированного пользователя
+
+- summary: |
+    Просмотр Guide в игре
+  requirement: |
+    Зарегистрированный пользователь может просматривать Guide в игре с ботом
+  prerequisites:
+    no data
+  test-data: |
+    Email = mccenzly@bk.ru
+    Password = 12345678
+  steps:
+    - Пройти авторизацию в приложении
+    - Создать игру
+    - Пройти все шаги с кнопкой Show guide
+  expected-result: |
+    Guide работает у зарегистрированного пользователя
+
+- summary: |
+    Смена темы игры
+  requirement: |
+    В игровом поле пользователю доступен выбор темы игры light/dark
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - В игровом поле нажать Light
+    - В игровом поле нажать Dark
+  expected-result: |
+    Тема игрового поля меняется с светлой на темную и наоборот
+
+- summary: |
+    Сдаться в игре
+  requirement: |
+    Пользователь может сдаться нажав Give up
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - Нажать на кнопку с флагом Give up
+    - Подтвердить нажав Give up
+    - Нажать I'll be back
+  expected-result: |
+    Появилось окно с надписью If you read this you've lost the game, игра окончена, пользователь проиграл
+
+- summary: |
+    Обнуление solution
+  requirement: |
+    Пользователь может обнулить solution
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - В игровом поле solution напечатать любой набор символов
+    - Нажать Reset solution
+  expected-result: |
+    В игровом поле "solution" обнулился до начальных значений
+
+- summary: |
+    Автоматическая проверка - задача решена верно
+  requirement: |
+    Пользователь может запустить проверку solution 
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Task = rect area
+    Код для победы в игре:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - Записать в solution код решения данного задания 
+    - Нажать кнопку Run
+  expected-result: |
+    Появилось окно Woohoo, you're Champion!!!!!, во вкладке output появилось сообщение Yay! All tests passed!!111 код прошел проверку
+
+- summary: |
+    Автоматическая проверка -задача решена неверно
+  requirement: |
+    Пользователь может запустить проверку solution 
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Task = rect area
+    Код для победы в игре:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width + length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - Записать в solution код решения данного задания 
+    - Нажать кнопку Run
+  expected-result: |
+    Появилось окно If you read this you've lost the game
+
+- summary: |
+    Чат с соперником в игре
+  requirement: |
+    Пользователю доступен чат с соперником во время игры
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - В поле чата написать Privet
+  expected-result: |
+    В окне чата появилось сообщение Privet
+
+- summary: |
+    Rematch игры
+  requirement: |
+    После победы/поражения в игре, возможно сделать Rematch игры
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Код для победы в игре:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - Завершить игру (победой или поражением)
+    - Нажать кнопку Rematch
+  expected-result: |
+    Кнопка Rematch доступна. После нажатия на кнопку Rematch запускается новая игра с теми же настройками и противником
+
+- summary: |
+    Просмотр игрового поля противника
+  requirement: |
+    Во время игры пользователю доступно для просмотра игровое поле противника, на нем отображаются все действия пользователя
+  prerequisites:
+    Открыты главные страницы CodeBattle двух атворизованных пользователей с разных браузеров
+  test-data: |
+    Пользователь 1 = email danism76@gmail.com, password Avangard13
+    Пользователь 2 = email dan_m86@list.ru, password 111111
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - На втором аккаунте принять игру нажав accept
+    - Пользователь 1 начинает выполнять действия на игровом поле
+    - Пользователь 2 наблюдает за действиями Пользователя 1
+  expected-result: |
+    Пользователь 2 видит все действия Пользователя 1 на игровом поле
+
+- summary: |
+    Отмена игры до её начала
+  requirement: |
+    Пользователь может отменить игру до ее начала
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Пользователь 1 = email danism76@gmail.com, password Avangard13
+    Пользователь 2 = email dan_m86@list.ru, password 111111
+  steps:
+    - Пользователь 1 - нажать Create a game
+    - Пользователь 1 - выьрать параметры игры с Пользователем 2 
+    - Пользователь 1 - нажать Create battle
+    - Пользователь 2 - нажимает кнопку отмены игры decline до её начала
+  expected-result: |
+    Игра успешно отменяется до её начала
+
+- summary: |
+    Получение очков за победу
+  requirement: |
+    Пользователь должен получать очки за победу в играх и они должны отображаться корректно
+  prerequisites:
+    Открыты главные страницы CodeBattle двух атворизованных пользователей с разных браузеров
+  test-data: |
+    Пользователь 1 = email danism76@gmail.com, password Avangard13
+    Пользователь 2 = email dan_m86@list.ru, password 111111
+    Task = rect area
+    Код для победы в игре:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры с Пользователем 2
+    - Нажать Create battle
+    - Вставить код для победы
+    - Нажать Run
+    - Перейти в лобби
+    - Проверить количество очков на профиле пользователя
+  expected-result: |
+    Пользователь получает очки за победу в игре и они отображаются корректно.
+
+- summary: |
+    Очки рейтинга нового игрока
+  requirement: |
+    Показатели рейтинга нового игрока должны быть корректны
+  prerequisites:
+    В веб-приложении CodeBattle создан пользователь который ни разу не вступал в игру
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Проверить количество очков на профиле пользователя
+  expected-result: |
+    Очки рейтинга отображены корректно
+
+- summary: |
+    Использование приватного чата с игроками online
+  requirement: |
+    Пользователь может использовать приватный чат с игроками online
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Открыть список игроков online
+    - Выбрать игрока и начать с ним приватный чат
+  expected-result: |
+    Пользователь может успешно использовать приватный чат с игроками online
+
+- summary: |
+    Отображение количества игроков online на главной странице
+  requirement: |
+    На главной странице должно отражаться количество игроков online
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Просмотреть область на главной странице, где отображается количество игроков online
+  expected-result: |
+    На главной странице отображается актуальное количество игроков online
+
+- summary: |
+    Обновление количества игроков online при входе/выходе других пользователей
+  requirement: |
+    Количество игроков онлайн должно обновляться при входе/выходе других пользователей на сайт
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Следить за количеством игроков online
+    - Отметить изменения в количестве при входе/выходе других пользователей
+  expected-result: |
+    Количество игроков online обновляется в реальном времени при входе/выходе других пользователей
+
+- summary: |
+   Наличие общего чата на главной странице
+  requirement: |
+    На главной странице должен быть общий чат со всеми доступными игроками online
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Найти общий чат на главной странице
+    - Проверить возможность отправки сообщений в общий чат
+  expected-result: |
+    Общий чат доступен на главной странице, и пользователи могут отправлять сообщения
+
+- summary: |
+    Проверка возможность общения через чаты
+  requirement: |
+    Пользователю должно быть доступно легко отправлять и получать сообщения от других пользователей на сайте
+  prerequisites:
+    no data
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Открыть сайт в веб-браузере
+    - Авторизоваться
+    - Перейти в раздел общения (например, чат или форумы)
+    - Отправить сообщение другим пользователям
+  expected-result: |
+    Сообщения отправляются и приходят от других пользователей на сайте
+
+- summary: |
+    Простота навигации
+  requirement: |
+    Навигация на сайте должна быть понятной и простой
+  prerequisites:
+    no data
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Открыть сайт в веб-браузере
+    - Авторизоваться
+    - Покликать основные разделы сайта (например, главная страница, профиль, настройки)
+    - Оценить количество кликов и время, необходимое для нахождения нужных разделов
+  expected-result: |
+    Пользователь легко и быстро находит все основные разделы сайта с минимальным количеством кликов
+
+- summary: |
+    Единый стиль
+  requirement: |
+    Все страницы и элементы интерфейса сайта должны иметь единый стиль
+  prerequisites:
+    no data
+  test-data: |
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Открыть сайт в веб-браузере
+    - Авторизоваться
+    - Просмотреть различные страницы и разделы сайта
+    - Проверить, что все страницы и элементы интерфейса выдержаны в едином стиле
+  expected-result: |
+    Все страницы и элементы интерфейса сайта имеют единый стиль
+
+- summary: |
     Проверка регистрации пользователя с Nickname более 16 символов
   requirement: |
     Поле для ввода имени в разделе регистрации должно быть от 3 до 16 символов
@@ -22,7 +646,7 @@
     no data
   test-data: |
     Niсkname = Dan11111111111111
-    Email = dan_m86@list.ru
+    Email = danism76@gmail.com
     Password = 111111
   steps:
     - Нажать кнопку Sign Up
@@ -42,7 +666,7 @@
     no data
   test-data: |
     Niсkname = D1
-    Email = dan_m86@list.ru
+    Email = danism76@gmail.com
     Password = 111111
   steps:
     - Нажать кнопку Sign Up
@@ -62,7 +686,7 @@
     no data
   test-data: |
     Niсkname = Денис
-    Email = dan_m86@list.ru
+    Email = danism76@gmail.com
     Password = 111111
   steps:
     - Нажать кнопку Sign Up
@@ -73,6 +697,148 @@
     - Нажать кнопку Submit
   expected-result: |
     В поле Nickname отобразилась ошибка Should contain Latin letters, numbers and underscores. Only begin with latin letter
+
+- summary: |
+    Проверка регистрации пользователя с Password более 16 символов
+  requirement: |
+    Поле для ввода пароля в разделе регистрации должно быть от 6 до 16 символов
+  prerequisites: |
+    no data
+  test-data: |
+    Niсkname = Dan
+    Email = danism76@gmail.com
+    Password = 12345678912345678
+  steps:
+    - Нажать кнопку Sign Up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать кнопку Submit
+  expected-result: |
+    В поле Password отобразилась ошибка Should be from 6 to 16 characters
+
+- summary: |
+    Проверка регистрации пользователя с Password менее 6 символов
+  requirement: |
+    Поле для ввода пароля в разделе регистрации должно быть от 6 до 16 символов
+  prerequisites: |
+    no data
+  test-data: |
+    Niсkname = Dan
+    Email = danism76@gmail.com
+    Password = 111
+  steps:
+    - Нажать кнопку Sign Up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать кнопку Submit
+  expected-result: |
+    В поле Password отобразилась ошибка Should be from 6 to 16 characters
+
+- summary: |
+    Проверка регистрации пользователя с уже зарегистрированным email
+  requirement: |
+    При регистрации пользователя с уже зарегистрированным email появляется ошибка Email is already taken
+  prerequisites: |
+    Используется email с ранее зарегистрированного аккаунта
+  test-data: |
+    Niсkname = Man
+    Email = danism76@gmail.com
+    Password = 11111111
+  steps:
+    - Нажать кнопку Sign Up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать кнопку Submit
+  expected-result: |
+    В поле Email отобразилась ошибка Email is already taken
+
+- summary: |
+    Проверка авторизации пользователя с пустым полем email
+  requirement: |
+    При авторизации если оставить поле email пустым появляется ошибка Email required
+  prerequisites: |
+    no data
+  test-data: |
+    Email = пустое поле
+    Password = 111111
+  steps:
+    - Нажать кнопку Sign In
+    - Оставить поле email пустым
+    - Ввести Password
+    - Нажать кнопку Submit
+  expected-result: |
+    Отобразилась ошибка Email required
+
+- summary: |
+    Проверка авторизации пользователя с некорректным паролем
+  requirement: |
+    При входе в профиль и вводе неверного пароля отображается ошибка INVALID_PASSWORD
+  prerequisites: |
+    no data
+  test-data: |
+    Email = danism76@gmail.com
+    Password = 87654321
+  steps:
+    - Нажать кнопку Sign In
+    - Ввести Email
+    - Ввести Password
+    - Нажать кнопку Submit
+  expected-result: |
+    Отобразилась ошибка INVALID_PASSWORD
+
+- summary: |
+    Проверка авторизации пользователя с пустым полем password
+  requirement: |
+    При авторизации если оставить поле password пустым появляется ошибка Password required
+  prerequisites: |
+    no data
+  test-data: |
+    Email = danism76@gmail.com
+    Password = не заполнять!
+  steps:
+    - Нажать кнопку Sign In
+    - Ввести email
+    - Оставить поле password пустым
+    - Нажать кнопку Submit
+  expected-result: |
+    Отобразилась ошибка Password required
+
+- summary: |
+    Проверка регистрации пользователя с незарегистрированным email
+  requirement: |
+    Пользователь может зарегистрироваться на сайте только имея зарегистрированный email
+  prerequisites: |
+    no data
+  test-data: |
+    Niсkname = Dan
+    Login = dan_m86@bk.com
+    Password = 111111
+  steps:
+    - Нажать кнопку Sign Up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать кнопку Submit
+  expected-result: |
+    Появилась ошибка email is not registered
+
+
+
+
+
+
+
+
+
+
+
 
 
 
