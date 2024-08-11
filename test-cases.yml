@@ -12,5 +12,71 @@
     - Заполнить все обязательные поля 
     - Нажать кнопку Submit
   expected-result: |
-    Регистрация пройдена, в правом верхнем углу отображены данные (аватар, Nickname) указанного пользователя
+    Регистрация пройдена, в правом верхнем углу отображены данные (аватар, Nickname) указанного пользователя.
+
+- summary: |
+    Проверка регистрации пользователя с Nickname более 16 символов
+  requirement: |
+    Поле для ввода имени в разделе регистрации должно быть от 3 до 16 символов
+  prerequisites: |
+    no data
+  test-data: |
+    Niсkname = Dan11111111111111
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Нажать кнопку Sign Up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать кнопку Submit
+  expected-result: |
+    В поле Nickname отобразилась ошибка Should be from 3 to 16 characters
+    
+- summary: |
+    Проверка регистрации пользователя с Nickname менее 3 символов
+  requirement: |
+    Поле для ввода имени в разделе регистрации должно быть от 3 до 16 символов
+  prerequisites: |
+    no data
+  test-data: |
+    Niсkname = D1
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Нажать кнопку Sign Up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать кнопку Submit
+  expected-result: |
+    В поле Nickname отобразилась ошибка Should be from 3 to 16 characters
+
+- summary: |
+    Проверка регистрации пользователя с Nickname введенным на кириллице
+  requirement: |
+    Поле для ввода Nickname в разделе регистрации должно быть только на латинице
+  prerequisites: |
+    no data
+  test-data: |
+    Niсkname = Денис
+    Email = dan_m86@list.ru
+    Password = 111111
+  steps:
+    - Нажать кнопку Sign Up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать кнопку Submit
+  expected-result: |
+    В поле Nickname отобразилась ошибка Should contain Latin letters, numbers and underscores. Only begin with latin letter
+
+
+
+
+
+
 
