@@ -1,0 +1,188 @@
+---
+- summary: |
+    Успешная регистрация пользователя
+  status: pass
+
+- summary: |
+    Успешный вход с помощью других сервисов (GitHub)
+  status: pass
+
+- summary: |
+    Успешный вход с помощью других сервисов (Discord)
+  status: pass
+
+- summary: |
+    Успешный вход с помощью других сервисов (Discord - QR-код)
+  status: pass
+
+- summary: |
+    Успешная авторизация на сайте
+  status: pass
+
+- summary: |
+    Успешное восстановление пароля
+  status: pass
+
+- summary: |
+    Запуск игры незарегистрированным пользователем
+  status: pass
+
+- summary: |
+    Редактирование профиля пользователя
+  status: pass
+
+- summary: |
+   Изменение настроек профиля (Язык программирования)
+  status: pass
+
+- summary: |
+    Изменение настроек профиля (звуки сайта)
+  status: pass
+
+- summary: |
+     Изменение настроек профиля (звуки - громкость)
+  status: pass
+
+- summary: |
+    Просмотр статистики своего профиля
+  status: pass
+  
+- summary: |
+    Выход из профиля
+  status: pass
+
+- summary: |
+    Открытие созданного турнира
+  status: pass
+
+- summary: |
+    Сортировка пользователей по рейтингу
+  status: pass
+
+- summary: |
+    Создание игры
+  status: pass
+
+- summary: |
+    История игры
+  status: pass
+
+- summary: |
+    Просмотр Guide в игре незарегистрированным пользователем
+  status: pass
+
+- summary: |
+    Просмотр Guide в игре зарегистрированным пользователем
+  status: pass
+
+- summary: |
+    Смена темы игры
+  status: pass
+
+- summary: |
+    Сдаться в игре
+  status: pass
+
+- summary: |
+     Обнуление solution
+  status: pass
+
+- summary: |
+    Автоматическая проверка - задача решена верно
+  status: pass
+
+- summary: |
+    Автоматическая проверка -задача решена неверно
+  status: pass
+
+- summary: |
+    Чат с соперником в игре
+  status: pass
+
+- summary: |
+    Rematch игры
+  status: pass
+
+- summary: |
+    Просмотр игрового поля противника
+  status: pass
+
+- summary: |
+    Отмена игры до её начала
+  status: pass
+
+- summary: |
+    Получение очков за победу
+  status: pass
+
+- summary: |
+    Очки рейтинга нового игрока
+  status: pass
+
+- summary: |
+    Использование приватного чата с игроками online
+  status: pass
+
+- summary: |
+    Отображение количества игроков online на главной странице
+  status: pass
+
+- summary: |
+    Обновление количества игроков online при входе/выходе других пользователей
+  status: pass
+
+- summary: |
+    Наличие общего чата на главной странице
+  status: pass
+  
+- summary: |
+    Проверка возможности общения через чаты
+  status: pass
+
+- summary: |
+    Простота навигации
+  status: pass
+
+- summary: |
+    Единый стиль
+  status: pass
+
+- summary: |
+    Проверка регистрации пользователя с Nickname более 16 символов
+  status: pass
+
+- summary: |
+    Проверка регистрации пользователя с Nickname менее 3 символов
+  status: pass
+
+- summary: |
+    Проверка регистрации пользователя с Nickname введенным на кириллице
+  status: pass
+
+- summary: |
+    Проверка регистрации пользователя с Password более 16 символов
+  status: pass
+
+- summary: |
+    Проверка регистрации пользователя с Password менее 6 символов
+  status: pass
+
+- summary: |
+    Проверка регистрации пользователя с уже зарегистрированным email
+  status: pass
+
+- summary: |
+    Проверка авторизации пользователя с пустым полем email
+  status: pass
+
+- summary: |
+    Проверка авторизации пользователя с некорректным паролем
+  status: pass
+
+- summary: |
+    Проверка авторизации пользователя с пустым полем password
+  status: pass
+
+- summary: |
+    Проверка регистрации пользователя с незарегистрированным email
+  status: pass
